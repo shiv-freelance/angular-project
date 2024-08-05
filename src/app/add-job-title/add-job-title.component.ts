@@ -15,16 +15,15 @@ interface Job {
   styleUrl: './add-job-title.component.css',
 })
 export class AddJobTitleComponent {
-  jobs: Job[] = [
+  jobs: any[] = [
     { id: 1, description: 'Description for Stage 1' },
   ];
 
-  newJob: Job = {
+  newJob: any = {
     id: 0,
     description: '',
   };
 
-  editingJob: Job = this.newJob;
 
   addJob() {
     this.newJob.id = this.jobs.length + 1;
@@ -38,14 +37,14 @@ export class AddJobTitleComponent {
   }
 
   editJob(job: Job) {
-    this.editingJob = job;
+    this.newJob = job;
   }
 
   saveEdit() {
-    if (this.editingJob) {
-      const index = this.jobs.findIndex((job) => job.id === this.editingJob.id);
+    if (this.newJob) {
+      const index = this.jobs.findIndex((job) => job.id === this.newJob.id);
       if (index !== -1) {
-        this.jobs[index] = this.editingJob;
+        this.jobs[index] = this.newJob;
       }
     }
   }
