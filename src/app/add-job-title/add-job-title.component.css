@@ -1,0 +1,15 @@
+.form-group {
+  margin-bottom: 10px;
+}
+
+#submit, #close {
+    margin-right: 50px;
+}
+
+.job-headers {
+  background-color: black;
+}
+
+#title, #description{
+  width: 50%;
+}

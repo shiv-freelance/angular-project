@@ -1,0 +1,8 @@
+
+#job-title, #description {
+    width: 50%
+}
+
+#submit, #close {
+    margin-right: 50px;
+}

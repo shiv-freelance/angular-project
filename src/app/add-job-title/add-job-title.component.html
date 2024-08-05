@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>Add Job title</h2>
+
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea class="form-control" id="description" required [(ngModel)]="newJob.description"></textarea>
+  </div>
+  <br>
+  <button id="submit" class="btn btn-danger" (click)="addJob()">Submit</button>
+  <button id="close" class="btn btn-dark" (click)="onClose()">Close</button>
+
+  <br /><br />
+  
+  <table class="table table-primary">
+    <thead class="job-headers">
+      <tr>
+        <th>S.No</th>
+        <th>Job Title</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let job of jobs" class="table-secondary">
+        <td>{{ job.id }}</td>
+        <td>{{ job.description }}</td>
+        <td>
+          <button class="btn btn-warning" (click)="editJob(job)">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+          <button class="btn btn-danger" (click)="deleteJob(job.id)">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
